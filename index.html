@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>spribe</title>
+<title>Aviator Signal</title>
 
 <style>
 * {
@@ -21,15 +21,15 @@ body {
 
 /* Container */
 .container {
-    padding: 20px;
-    max-width: 420px;
+    padding: 25px;
+    max-width: 400px;
     margin: auto;
 }
 
 /* Logo */
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     background: black;
     border-radius: 50%;
     margin: 20px auto;
@@ -37,29 +37,20 @@ body {
     align-items: center;
     justify-content: center;
     color: #ff2d2d;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    box-shadow: 0 0 20px rgba(255,0,0,0.6);
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
 }
 
 /* Heading */
 h1 {
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
 .subtext {
     color: #bbb;
-    margin-bottom: 20px;
-}
-
-/* Users counter */
-.users {
-    background: rgba(255,255,255,0.05);
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    font-size: 14px;
+    margin-bottom: 25px;
 }
 
 /* Timer */
@@ -67,15 +58,17 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .time-box {
     background: linear-gradient(180deg, #ffd700, #ffb800);
     color: black;
-    padding: 10px 18px;
-    border-radius: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
     font-weight: bold;
+    font-size: 18px;
+    min-width: 80px;
 }
 
 /* Button */
@@ -96,31 +89,49 @@ h1 {
     transform: scale(1.05);
 }
 
+/* Rating */
+.rating {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
 /* Footer */
 .footer {
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 12px;
     color: #aaa;
+    line-height: 1.5;
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Mobile */
+@media(max-width: 400px){
+    h1 { font-size: 22px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="container fade-in">
 
-    <div class="logo>"WhatsApp Image 2026-04-14 at 4.06.13 PM.jpeg"</div>
+    <div class="logo">✈️ Aviator</div>
 
-    <h1>spribe AVIATOR HACK SIGNAL FREE</h1>
+    <h1>AVIATOR HACK SIGNAL FREE</h1>
 
-    <p class="subtext">Live insights • Community discussion • Entertainment</p>
+    <p class="subtext">
+        Live insights • Community discussion • Entertainment
+    </p>
 
-    <!-- Live Users -->
-    <div class="users">
-        🔥 <span id="users">1243</span> people are using this now
-    </div>
-
-    <!-- Timer -->
     <div class="timer">
         <div class="time-box">
             <div id="minutes">00</div>
@@ -132,12 +143,12 @@ h1 {
         </div>
     </div>
 
-    <!-- Button -->
-    <a href="https://t.me/+1P8a3sPM3JlmNDU1" class="btn" id="joinBtn">
+    <!-- Telegram Button -->
+    <a href="https://t.me/YOUR_CHANNEL" class="btn">
         🚀 Join Telegram Channel
     </a>
 
-    <div>⭐⭐⭐⭐⭐ 4.9 Rating</div>
+    <div class="rating">⭐⭐⭐⭐⭐ 4.9 Community Rating</div>
 
     <div class="footer">
         18+ Only • Entertainment purpose only <br>
@@ -148,35 +159,22 @@ h1 {
 </div>
 
 <script>
-// Timer + Auto Redirect
+// Countdown Timer Loop
 let time = 60;
 
-let countdown = setInterval(() => {
+setInterval(() => {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
 
-    document.getElementById("minutes").innerText = String(minutes).padStart(2,'0');
-    document.getElementById("seconds").innerText = String(seconds).padStart(2,'0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
 
     time--;
-
-    if(time < 0){
-        clearInterval(countdown);
-        window.location.href = "WhatsApp Image 2026-04-14 at 4.06.13 PM.jpeg"; // AUTO REDIRECT
-    }
+    if (time < 0) time = 60;
 }, 1000);
 
-// Fake Live Users Counter
-let users = 1243;
-setInterval(() => {
-    let change = Math.floor(Math.random() * 5);
-    users += Math.random() > 0.5 ? change : -change;
-    document.getElementById("users").innerText = users;
-}, 3000);
-
-// Click Tracking (basic)
-document.getElementById("joinBtn").addEventListener("click", () => {
-    console.log("User clicked Join button");
+// Redirect after click delay
+document.querySelector(".btn").addEventListener("click", function(){
     alert("Redirecting to Telegram...");
 });
 </script>
