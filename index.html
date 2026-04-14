@@ -105,21 +105,19 @@ h1 {
 
 <div class="container">
 
-    <!-- LOGO -->
+    <!-- LOGO (BASE64 IMAGE) -->
     <div class="logo">
-        <img src="logo.jpg" alt="logo">
+        <img src="data:image/jpeg;base64,REPLACE_WITH_IMAGE_CODE" alt="logo">
     </div>
 
     <h1>AVIATOR SIGNAL FREE</h1>
 
     <p class="subtext">Live insights • Community discussion • Entertainment</p>
 
-    <!-- USERS -->
     <div class="users">
         🔥 <span id="users">1243</span> people are using this now
     </div>
 
-    <!-- TIMER -->
     <div class="timer">
         <div class="time-box">
             <div id="minutes">00</div>
@@ -131,8 +129,7 @@ h1 {
         </div>
     </div>
 
-    <!-- TELEGRAM BUTTON -->
-    <a href="https://t.me/+1P8a3sPM3JlmNDU1" class="btn" id="joinBtn">
+    <a href="https://t.me/+1P8a3sPM3JlmNDU1" class="btn">
         🚀 Join Telegram Channel
     </a>
 
@@ -147,16 +144,14 @@ h1 {
 </div>
 
 <script>
-
-// TIMER
 let time = 60;
 
 setInterval(() => {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+    let m = Math.floor(time / 60);
+    let s = time % 60;
 
-    document.getElementById("minutes").innerText = String(minutes).padStart(2,'0');
-    document.getElementById("seconds").innerText = String(seconds).padStart(2,'0');
+    document.getElementById("minutes").innerText = String(m).padStart(2,'0');
+    document.getElementById("seconds").innerText = String(s).padStart(2,'0');
 
     time--;
 
@@ -165,7 +160,6 @@ setInterval(() => {
     }
 }, 1000);
 
-// FAKE USERS
 let users = 1243;
 
 setInterval(() => {
@@ -173,12 +167,6 @@ setInterval(() => {
     users += Math.random() > 0.5 ? change : -change;
     document.getElementById("users").innerText = users;
 }, 3000);
-
-// CLICK TRACK
-document.getElementById("joinBtn").addEventListener("click", () => {
-    console.log("Telegram button clicked");
-});
-
 </script>
 
 </body>
