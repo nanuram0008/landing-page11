@@ -25,7 +25,7 @@ body {
     margin: auto;
 }
 
-/* LOGO */
+/* LOGO (NO FILE ISSUE - INLINE IMAGE) */
 .logo {
     width: 140px;
     height: 140px;
@@ -34,6 +34,9 @@ body {
     overflow: hidden;
     background: black;
     box-shadow: 0 0 20px rgba(255,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo img {
@@ -42,16 +45,19 @@ body {
     object-fit: cover;
 }
 
+/* TEXT */
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
 .subtext {
     color: #bbb;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
+/* USERS */
 .users {
     background: rgba(255,255,255,0.05);
     padding: 10px;
@@ -60,6 +66,7 @@ h1 {
     font-size: 14px;
 }
 
+/* TIMER */
 .timer {
     display: flex;
     justify-content: center;
@@ -73,8 +80,10 @@ h1 {
     padding: 10px 18px;
     border-radius: 10px;
     font-weight: bold;
+    min-width: 80px;
 }
 
+/* BUTTON */
 .btn {
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     padding: 14px;
@@ -92,6 +101,7 @@ h1 {
     transform: scale(1.05);
 }
 
+/* FOOTER */
 .footer {
     margin-top: 20px;
     font-size: 12px;
@@ -105,20 +115,21 @@ h1 {
 
 <div class="container">
 
-    <!-- LOGO (BASE64 IMAGE) -->
+    <!-- LOGO (YOUR IMAGE EMBEDDED BASE64) -->
     <div class="logo">
-        <img src="WhatsApp Image 2026-04-14 at 4.06.13 PM.jpeg
-" alt="logo">
+        <img src="data:image/jpeg;base64,REPLACE_WITH_YOUR_IMAGE_BASE64" alt="logo">
     </div>
 
     <h1>AVIATOR SIGNAL FREE</h1>
 
     <p class="subtext">Live insights • Community discussion • Entertainment</p>
 
+    <!-- USERS -->
     <div class="users">
         🔥 <span id="users">1243</span> people are using this now
     </div>
 
+    <!-- TIMER -->
     <div class="timer">
         <div class="time-box">
             <div id="minutes">00</div>
@@ -130,6 +141,7 @@ h1 {
         </div>
     </div>
 
+    <!-- TELEGRAM -->
     <a href="https://t.me/+1P8a3sPM3JlmNDU1" class="btn">
         🚀 Join Telegram Channel
     </a>
@@ -145,6 +157,7 @@ h1 {
 </div>
 
 <script>
+// TIMER
 let time = 60;
 
 setInterval(() => {
@@ -161,10 +174,11 @@ setInterval(() => {
     }
 }, 1000);
 
+// FAKE USERS
 let users = 1243;
 
 setInterval(() => {
-    let change = Math.floor(Math.random() * 5);
+    let change = Math.floor(Math.random() * 6);
     users += Math.random() > 0.5 ? change : -change;
     document.getElementById("users").innerText = users;
 }, 3000);
